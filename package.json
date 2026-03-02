@@ -2,9 +2,9 @@
   "name": "devtinder",
   "version": "1.0.0",
   "description": "It is a backend application for developers who can make connections",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon app.js"
   },
   "repository": {
     "type": "git",
