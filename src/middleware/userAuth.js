@@ -1,6 +1,6 @@
-import jwt from "jsonwebtoken";
+const jwt = require("jsonwebtoken");
 
-export const userAuth = async (req, res, next) => {
+const userAuth = async (req, res, next) => {
   console.log(Object.keys(req));
   const { token } = req.cookies;
 
@@ -14,3 +14,5 @@ export const userAuth = async (req, res, next) => {
     res.status(401).send("unauthorizedd");
   }
 };
+
+module.exports = { userAuth };
