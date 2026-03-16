@@ -1,9 +1,10 @@
 const express = require("express");
 const { userAuth } = require("../middleware/userAuth");
+const { User } = require("../models/User");
 
 const router = express.Router();
 
-router.get("/profile", userAuth, async (req, res) => {
+router.get("/profile/view", userAuth, async (req, res) => {
   const emailId = req.body.emailId;
   try {
     const user = await User.findOne({ emailId });
@@ -43,7 +44,7 @@ router.delete("/profile", async (req, res) => {
   }
 });
 
-router.patch("/profile", async (req, res) => {
+router.patch("/profile/edit", async (req, res) => {
   const userId = req.body.userId;
   const data = req.body;
   const ALLOWED_UPDATES = [
